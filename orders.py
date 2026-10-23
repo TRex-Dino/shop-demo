@@ -16,7 +16,7 @@ def calculate_total(items, coupon_percent=0):
     subtotal = sum(price * qty for price, qty in items)
 
     discount = coupon_discount(subtotal, coupon_percent)
-    total = subtotal  # TODO: пересчитать сумму со скидкой
+    total = subtotal - discount
 
     if total < FREE_DELIVERY_FROM:
         total += DELIVERY_FEE
